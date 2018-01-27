@@ -1,2 +1,2 @@
 # python-101
-Basic Pythoneeee Programming
+Basic Python Programming
