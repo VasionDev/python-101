@@ -2,6 +2,7 @@ from tkinter import *
 import random
 import time
 import datetime
+from tkinter import messagebox
 
 root = Tk()
 root.geometry('1350x750+0+0')
@@ -49,6 +50,135 @@ frame2TopLabel.grid(row=0, sticky=W)
 
 frame2TopDisplay = Text(frame2Top, font=('arial', 10, 'bold'), width=47, height=30)
 frame2TopDisplay.grid(row=1, column=0)
+
+# **** Functions ****
+
+
+def exit_project():
+    project_exit = messagebox.askyesno('Project Exit', 'Are you want to exit?')
+    if project_exit is True:
+        root.destroy()
+
+
+def reset_project():
+    check1.set(0)
+    check2.set(0)
+    check3.set(0)
+    check4.set(0)
+    check5.set(0)
+    check6.set(0)
+    check7.set(0)
+    check8.set(0)
+    check9.set(0)
+    check10.set(0)
+    check11.set(0)
+    check12.set(0)
+    check13.set(0)
+    check14.set(0)
+    check15.set(0)
+    check16.set(0)
+
+    entry1.set(0)
+    entry2.set(0)
+    entry3.set(0)
+    entry4.set(0)
+    entry5.set(0)
+    entry6.set(0)
+    entry7.set(0)
+    entry8.set(0)
+    entry9.set(0)
+    entry10.set(0)
+    entry11.set(0)
+    entry12.set(0)
+    entry13.set(0)
+    entry14.set(0)
+    entry15.set(0)
+    entry16.set(0)
+
+    entryField1.configure(state=DISABLED)
+    entryField2.configure(state=DISABLED)
+    entryField3.configure(state=DISABLED)
+    entryField4.configure(state=DISABLED)
+    entryField5.configure(state=DISABLED)
+    entryField6.configure(state=DISABLED)
+    entryField7.configure(state=DISABLED)
+    entryField8.configure(state=DISABLED)
+    entryField9.configure(state=DISABLED)
+    entryField10.configure(state=DISABLED)
+    entryField11.configure(state=DISABLED)
+    entryField12.configure(state=DISABLED)
+    entryField13.configure(state=DISABLED)
+    entryField14.configure(state=DISABLED)
+    entryField15.configure(state=DISABLED)
+    entryField16.configure(state=DISABLED)
+
+
+def check_button():
+    if check1.get() == 1:
+        entryField1.configure(state=NORMAL)
+    else:
+        entryField1.configure(state=DISABLED)
+    if check2.get() == 1:
+        entryField2.configure(state=NORMAL)
+    else:
+        entryField2.configure(state=DISABLED)
+    if check3.get() == 1:
+        entryField3.configure(state=NORMAL)
+    else:
+        entryField3.configure(state=DISABLED)
+    if check4.get() == 1:
+        entryField4.configure(state=NORMAL)
+    else:
+        entryField4.configure(state=DISABLED)
+    if check5.get() == 1:
+        entryField5.configure(state=NORMAL)
+    else:
+        entryField5.configure(state=DISABLED)
+    if check6.get() == 1:
+        entryField6.configure(state=NORMAL)
+    else:
+        entryField6.configure(state=DISABLED)
+    if check7.get() == 1:
+        entryField7.configure(state=NORMAL)
+    else:
+        entryField7.configure(state=DISABLED)
+    if check8.get() == 1:
+        entryField8.configure(state=NORMAL)
+    else:
+        entryField8.configure(state=DISABLED)
+    if check9.get() == 1:
+        entryField9.configure(state=NORMAL)
+    else:
+        entryField9.configure(state=DISABLED)
+    if check10.get() == 1:
+        entryField10.configure(state=NORMAL)
+    else:
+        entryField10.configure(state=DISABLED)
+    if check11.get() == 1:
+        entryField11.configure(state=NORMAL)
+    else:
+        entryField11.configure(state=DISABLED)
+    if check12.get() == 1:
+        entryField12.configure(state=NORMAL)
+    else:
+        entryField12.configure(state=DISABLED)
+    if check13.get() == 1:
+        entryField13.configure(state=NORMAL)
+    else:
+        entryField13.configure(state=DISABLED)
+    if check14.get() == 1:
+        entryField14.configure(state=NORMAL)
+    else:
+        entryField14.configure(state=DISABLED)
+    if check15.get() == 1:
+        entryField15.configure(state=NORMAL)
+    else:
+        entryField15.configure(state=DISABLED)
+    if check16.get() == 1:
+        entryField16.configure(state=NORMAL)
+    else:
+        entryField16.configure(state=DISABLED)
+
 
 # **** Variables ****
 
@@ -124,37 +254,37 @@ entry16.set(0)
 
 # **** Checkbox Button ****
 
-checkbox1 = Checkbutton(frame1TopLeft, font=('arial', 15, 'bold'), text='CheckBox 1 \t\t', variable=check1, onvalue=1, offvalue=0)
+checkbox1 = Checkbutton(frame1TopLeft, font=('arial', 15, 'bold'), text='CheckBox 1 \t\t', variable=check1, onvalue=1, offvalue=0, command=check_button)
 checkbox1.grid(row=0, column=0, sticky=W)
-checkbox2 = Checkbutton(frame1TopLeft, font=('arial', 15, 'bold'), text='CheckBox 2', variable=check2, onvalue=1, offvalue=0)
+checkbox2 = Checkbutton(frame1TopLeft, font=('arial', 15, 'bold'), text='CheckBox 2', variable=check2, onvalue=1, offvalue=0, command=check_button)
 checkbox2.grid(row=1, column=0, sticky=W)
-checkbox3 = Checkbutton(frame1TopLeft, font=('arial', 15, 'bold'), text='CheckBox 3', variable=check3, onvalue=1, offvalue=0)
+checkbox3 = Checkbutton(frame1TopLeft, font=('arial', 15, 'bold'), text='CheckBox 3', variable=check3, onvalue=1, offvalue=0, command=check_button)
 checkbox3.grid(row=2, column=0, sticky=W)
-checkbox4 = Checkbutton(frame1TopLeft, font=('arial', 15, 'bold'), text='CheckBox 4', variable=check4, onvalue=1, offvalue=0)
+checkbox4 = Checkbutton(frame1TopLeft, font=('arial', 15, 'bold'), text='CheckBox 4', variable=check4, onvalue=1, offvalue=0, command=check_button)
 checkbox4.grid(row=3, column=0, sticky=W)
-checkbox5 = Checkbutton(frame1TopLeft, font=('arial', 15, 'bold'), text='CheckBox 5', variable=check5, onvalue=1, offvalue=0)
+checkbox5 = Checkbutton(frame1TopLeft, font=('arial', 15, 'bold'), text='CheckBox 5', variable=check5, onvalue=1, offvalue=0, command=check_button)
 checkbox5.grid(row=4, column=0, sticky=W)
-checkbox6 = Checkbutton(frame1TopLeft, font=('arial', 15, 'bold'), text='CheckBox 6', variable=check6, onvalue=1, offvalue=0)
+checkbox6 = Checkbutton(frame1TopLeft, font=('arial', 15, 'bold'), text='CheckBox 6', variable=check6, onvalue=1, offvalue=0, command=check_button)
 checkbox6.grid(row=5, column=0, sticky=W)
-checkbox7 = Checkbutton(frame1TopLeft, font=('arial', 15, 'bold'), text='CheckBox 7', variable=check7, onvalue=1, offvalue=0)
+checkbox7 = Checkbutton(frame1TopLeft, font=('arial', 15, 'bold'), text='CheckBox 7', variable=check7, onvalue=1, offvalue=0, command=check_button)
 checkbox7.grid(row=6, column=0, sticky=W)
-checkbox8 = Checkbutton(frame1TopLeft, font=('arial', 15, 'bold'), text='CheckBox 8', variable=check8, onvalue=1, offvalue=0)
+checkbox8 = Checkbutton(frame1TopLeft, font=('arial', 15, 'bold'), text='CheckBox 8', variable=check8, onvalue=1, offvalue=0, command=check_button)
 checkbox8.grid(row=7, column=0, sticky=W)
-checkbox9 = Checkbutton(frame1TopRight, font=('arial', 15, 'bold'), text='CheckBox 9 \t\t\t', variable=check9, onvalue=1, offvalue=0)
+checkbox9 = Checkbutton(frame1TopRight, font=('arial', 15, 'bold'), text='CheckBox 9 \t\t\t', variable=check9, onvalue=1, offvalue=0, command=check_button)
 checkbox9.grid(row=0, column=0, sticky=W)
-checkbox10 = Checkbutton(frame1TopRight, font=('arial', 15, 'bold'), text='CheckBox 10', variable=check10, onvalue=1, offvalue=0)
+checkbox10 = Checkbutton(frame1TopRight, font=('arial', 15, 'bold'), text='CheckBox 10', variable=check10, onvalue=1, offvalue=0, command=check_button)
 checkbox10.grid(row=1, column=0, sticky=W)
-checkbox11 = Checkbutton(frame1TopRight, font=('arial', 15, 'bold'), text='CheckBox 11', variable=check11, onvalue=1, offvalue=0)
+checkbox11 = Checkbutton(frame1TopRight, font=('arial', 15, 'bold'), text='CheckBox 11', variable=check11, onvalue=1, offvalue=0, command=check_button)
 checkbox11.grid(row=2, column=0, sticky=W)
-checkbox12 = Checkbutton(frame1TopRight, font=('arial', 15, 'bold'), text='CheckBox 12', variable=check12, onvalue=1, offvalue=0)
+checkbox12 = Checkbutton(frame1TopRight, font=('arial', 15, 'bold'), text='CheckBox 12', variable=check12, onvalue=1, offvalue=0, command=check_button)
 checkbox12.grid(row=3, column=0, sticky=W)
-checkbox13 = Checkbutton(frame1TopRight, font=('arial', 15, 'bold'), text='CheckBox 13', variable=check13, onvalue=1, offvalue=0)
+checkbox13 = Checkbutton(frame1TopRight, font=('arial', 15, 'bold'), text='CheckBox 13', variable=check13, onvalue=1, offvalue=0, command=check_button)
 checkbox13.grid(row=4, column=0, sticky=W)
-checkbox14 = Checkbutton(frame1TopRight, font=('arial', 15, 'bold'), text='CheckBox 14', variable=check14, onvalue=1, offvalue=0)
+checkbox14 = Checkbutton(frame1TopRight, font=('arial', 15, 'bold'), text='CheckBox 14', variable=check14, onvalue=1, offvalue=0, command=check_button)
 checkbox14.grid(row=5, column=0, sticky=W)
-checkbox15 = Checkbutton(frame1TopRight, font=('arial', 15, 'bold'), text='CheckBox 15', variable=check15, onvalue=1, offvalue=0)
+checkbox15 = Checkbutton(frame1TopRight, font=('arial', 15, 'bold'), text='CheckBox 15', variable=check15, onvalue=1, offvalue=0, command=check_button)
 checkbox15.grid(row=6, column=0, sticky=W)
-checkbox16 = Checkbutton(frame1TopRight, font=('arial', 15, 'bold'), text='CheckBox 16', variable=check16, onvalue=1, offvalue=0)
+checkbox16 = Checkbutton(frame1TopRight, font=('arial', 15, 'bold'), text='CheckBox 16', variable=check16, onvalue=1, offvalue=0, command=check_button)
 checkbox16.grid(row=7, column=0, sticky=W)
 
 # <<<<<<<<<<<<<<<<<<<<<<<<<<< End CheckBox Button >>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -202,10 +332,10 @@ totalButton = Button(frame2Bottom, text='Total', padx=6, pady=6, bd=2, font=('ar
 totalButton.grid(row=0, column=0)
 receiptButton = Button(frame2Bottom, text='Receipt', padx=6, pady=6, bd=2, font=('arial', 15, 'bold'))
 receiptButton.grid(row=0, column=1)
-totalReset = Button(frame2Bottom, text='Reset', padx=6, pady=6, bd=2, font=('arial', 15, 'bold'))
-totalReset.grid(row=0, column=2)
-totalQuit = Button(frame2Bottom, text='Quit', padx=6, pady=6, bd=2, font=('arial', 15, 'bold'))
-totalQuit.grid(row=0, column=3)
+resetButton = Button(frame2Bottom, text='Reset', padx=6, pady=6, bd=2, font=('arial', 15, 'bold'), command=reset_project)
+resetButton.grid(row=0, column=2)
+exitButton = Button(frame2Bottom, text='Exit', padx=6, pady=6, bd=2, font=('arial', 15, 'bold'), command=exit_project)
+exitButton.grid(row=0, column=3)
 
 # <<<<<<<<<<<<<<<<<<<<< End Button >>>>>>>>>>>>>>>>>>>>
 
